@@ -9,6 +9,7 @@ var partsArray = raw.split("&%27");
 var newArray = new Array(partsArray.length); //stores the correctly split but with other chars
 
 var categoryID = "";
+var city = ""; 
 
 for (var i = 0; i < partsArray.length; i++) {
     var temp = partsArray[i].lastIndexOf("=");
@@ -16,14 +17,16 @@ for (var i = 0; i < partsArray.length; i++) {
     newArray[i] = tempstr;
 }
 
-if (newArray[2] == "food")
+if (newArray[3] == "food")
     categoryID = "categoryId=4d4b7105d754a06374d81259&";
-categoryID = "categoryId=4d4b7105d754a06374d81259&";
-
-console.log(newArray[2]);
-
-
-if (newArray[0] == "Current+Location") {
+	
+	
+	
+	
+if(newArray[1] != ""){
+	city = "near=" + newArray[1] + "&";
+}
+else if (newArray[0] == "Current+Location") {
     {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(showPosition);
@@ -38,9 +41,29 @@ if (newArray[0] == "Current+Location") {
         console.log(lat);
         console.log(lon);
         JQuery(lat, lon);
+		city = 'li=' + lat + ',' + lon; 
     }
 
 }
+else{}
+
+
+	console.log(city);
+	console.log(categoryID);
+	
+
+
+$.getJSON('https://api.foursquare.com/v2/venues/search?' + categoryID + city +
+    'radius=1000&limit=5&***REMOVED***=***REMOVED***&***REMOVED***=***REMOVED***&v=20140215',
+    function (data) {
+        $.each(data.response.venues, function (i, venues) {
+            content = '<p>' + venues.name + '  ' + venues.location.address + '</p>';
+            $(content).appendTo("#names");
+        });
+    });
+
+
+
 
 function JQuery(lat, lon) {
 
@@ -52,9 +75,8 @@ document.getElementById("write").innerHTML = document.getElementById("write").in
 		document.getElementById("write").innerHTML= document.getElementById("write").innerHTML=document.getElementById("write").innerHTML+"1"+newArray[1];
         alert("here2");*/
 
-$.getJSON('https://api.foursquare.com/v2/venues/search?' + categoryID + 'll=' + lat + ',' + lon +
-    '&radius=1000&limit=5&***REMOVED***=***REMOVED***&***REMOVED***=***REMOVED***&v=20140215',
-
+$.getJSON('https://api.foursquare.com/v2/venues/search?' + categoryID + city +
+    'radius=1000&limit=5&***REMOVED***=***REMOVED***&***REMOVED***=***REMOVED***&v=20140215',
     function (data) {
         $.each(data.response.venues, function (i, venues) {
             content = '<p>' + venues.name + '  ' + venues.location.address + '</p>';
