@@ -35,7 +35,7 @@
         alert("here2");*/
 		
 		$.getJSON('https://api.foursquare.com/v2/venues/search?' + categoryID + 'll=' + newArray[0] + ',' + newArray[1] +
-		'&radius=1000&limit=50&***REMOVED***=***REMOVED***&***REMOVED***=***REMOVED***&v=20140215',
+		'&radius=1000&limit=5&***REMOVED***=***REMOVED***&***REMOVED***=***REMOVED***&v=20140215',
 		
 		function(data) {
         $.each(data.response.venues, function(i,venues){
