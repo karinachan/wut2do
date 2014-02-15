@@ -146,8 +146,8 @@ input::-moz-focus-inner {
     padding: 0
 }
 
-#slide{
-    text-align: right; 
+.fb-login-button{
+    text-align: center; 
     padding: 60px;
 }
 input {

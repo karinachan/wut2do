@@ -5,38 +5,16 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-	 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" id="jquery"></script>
-<script src="http://connect.facebook.net/en_US/all.js"></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" id="jquery"></script>
+    <script src="http://connect.facebook.net/en_US/all.js"></script>
     <script src="facebooklogin.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
-  <script src="//code.jquery.com/jquery-1.9.1.js"></script>
-  <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <script>
-  $(function() {
-    $( "#progressbar" ).progressbar({
-      value: false
-    });
-    $( "button" ).on( "click", function( event ) {
-      var target = $( event.target ),
-        progressbar = $( "#progressbar" ),
-        progressbarValue = progressbar.find( ".ui-progressbar-value" );
- 
-      if ( target.is( "#numButton" ) ) {
-        progressbar.progressbar( "option", {
-          value: Math.floor( Math.random() * 100 )
-        });
-      } else if ( target.is( "#colorButton" ) ) {
-        progressbarValue.css({
-          "background": '#' + Math.floor( Math.random() * 16777215 ).toString( 16 )
-        });
-      } else if ( target.is( "#falseButton" ) ) {
-        progressbar.progressbar( "option", "value", false );
-      }
-    });
-  });
-  </script>
+    <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script src="progressbar.js"></script>
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    
     <title>wut2do</title>
 
     <!-- Bootstrap -->
@@ -50,26 +28,48 @@
     <![endif]-->
 </head>
 
-<body><div id="slide"><fb:login-button show-faces="true" width="200" max-rows="1"></fb:login-button></div>
-    <span id="fbLogout" onclick="fbLogout()"><a class="fb_button fb_button_medium"><span class="fb_button_text">Logout</span></a></span>
+<body>
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <div class="fb-login-button" data-max-rows="5" data-size="xlarge" data-show-faces="true" data-auto-logout-link="true"></div>
+
     <h1>Don't have anything to do? Let us help you.</h1>
+
     <p>This is our home page. We are going to put some cute stuff here... idk This is our home page. We are going to put some cute stuff here... idk This is our home page. We are going to put some cute stuff here... idk
         <br>This is our home page. We are going to put some cute stuff here... idk This is our home page. We are going to put some cute stuff here... idk This is our home page. We are going to put some cute stuff here... idk This is our home page. We are going to put some cute stuff here... idk This is our home page. We are going to put some cute stuff here... idk This is our home page. We are going to put some cute stuff here... idk
         <br>This is our home page. We are going to put some cute stuff here... idk</p>
-<br>
-  <form action="destination.html" method="get">
-    Location? <input type="text" name="'lat" value="Current Location"><br><br>
-    When? <input type="text" name="'datetime"><br><br>
-    What do you want to do? <input type="checkbox" name="'interests" value = "food">  Food
-        <input type ="checkbox" name="'interests" value="Movie"> Movies
-        <input type ="checkbox" name="'interests" value = "Nature"> Nature
-        <input type ="checkbox" name="'interests" value = "ArtMuseum"> Museums
-        <input type ="checkbox" name="'interests" value = "Music"> Music   
-        <input type ="checkbox" name="'interests" value="shopping"> Shopping  <br><br>
-    <input type="submit" /> <!-- don't include the name part for submit to have it not appear in the get --> 
-  </form>
-    
-  <div id=result></div>
+    <br>
+    <form action="destination.html" method="get">
+        Location?
+        <input type="text" name="'lat" value="Current Location">
+        <br>
+        <br>When?
+        <input type="text" name="'datetime">
+        <br>
+        <br>What do you want to do?
+        <input type="checkbox" name="'interests" value="food">Food
+        <input type="checkbox" name="'interests" value="Movie">Movies
+        <input type="checkbox" name="'interests" value="Nature">Nature
+        <input type="checkbox" name="'interests" value="ArtMuseum">Museums
+        <input type="checkbox" name="'interests" value="Music">Music
+        <input type="checkbox" name="'interests" value="shopping">Shopping
+        <br>
+        <br>
+        <div id="progressbar"><input type="submit" /></div>
+        <!-- don't include the name part for submit to have it not appear in the get -->
+        <div id="progressbar"></div>
+    </form>
+
+    <div id=result></div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
