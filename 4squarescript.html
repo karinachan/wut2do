@@ -39,7 +39,7 @@
   var lat = 39.954897;
   var lng = -75.200212;
   
-$.getJSON('https://api.foursquare.com/v2/venues/search?ll=42.296797,-71.292388&radius=1000&limit=50&***REMOVED***=***REMOVED***&***REMOVED***=***REMOVED***&v=20140215',
+$.getJSON('https://api.foursquare.com/v2/venues/search?categoryId=4d4b7105d754a06374d81259&ll=42.296797,-71.292388&radius=1000&limit=50&***REMOVED***=***REMOVED***&***REMOVED***=***REMOVED***&v=20140215',
     function(data) {
         $.each(data.response.venues, function(i,venues){
             content = '<p>' + venues.name + '  ' + venues.location.address + '</p>'; 
