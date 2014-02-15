@@ -1,12 +1,19 @@
-function parseResults(){
-var raw = window.location.search;
+ var raw = window.location.search;
+        raw= raw.substring(4);
+    // alert(raw);
+        var partsArray = raw.split("&%27");
+        //partsArray.replace(/\W/g,'');
+        alert(partsArray);
+        //alert(partsArray);
 
-var partsArray = raw.split("=");
-var results= "";
-for (var i = 0; len=3; i++){
-    results= results+ partsArray[i];
-}
-
-document.getElementById("write").innerHTML=results;
-}
-
+        var newArray= new Array(partsArray.length); //stores the correctly split but with other chars
+        for (var i=0; i<partsArray.length;i++){
+            newArray[i]=partsArray[i].split("=");
+            
+            //alert("with chars"+newArray[i]);
+        }
+        
+        var resultStrings= newArray.join(",");
+        
+    
+    document.getElementById("write").innerHTML=resultStrings;

@@ -12,27 +12,7 @@
     <div id="write">
         <p>Your form response goes here:</p>
     </div>
-    <script>
-        var raw = window.location.search;
-    // alert(raw);
-        var partsArray = raw.split("%27");
-        //partsArray.replace(/\W/g,'');
-        alert(partsArray);
-        //alert(partsArray);
-        var newArray= new Array(partsArray.length); //stores the correctly split but with other chars
-        for (var i=0; i<partsArray.length;i++){
-            newArray[i]=partsArray[i].split("=");
-            
-            //alert("with chars"+newArray[i]);
-        }
-        
-        for (
-    
-        var resultStrings= newArray.join(",");
-        
-    
-    document.getElementById("write").innerHTML=resultStrings;
-    </script>
+    <script src="form_handle.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
