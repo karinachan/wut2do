@@ -18,6 +18,31 @@ html {
 body {
     margin: 0
 }
+
+html, body {
+    		height: 100%;
+    		margin: 0;
+    width: 100%;
+    	}
+
+    	#firstsection{
+    		min-height: 100%; 
+            width:100%;
+    	}
+
+#secondsection{ 
+    min-width:100%; 
+    padding: 50px;
+    background-color:rgba(30,160,10,0.4);
+}
+h1{ 
+    padding-top: 100px;
+    margin-top: 500px;
+}
+* html #container {
+height: 100%;
+}
+    
 article,
 aside,
 details,
@@ -373,7 +398,7 @@ h6,
 .h5,
 .h6 {
     font-family: inherit;
-    font-weight: 500;
+    font-weight: 500em;
     line-height: 1.1;
     color: inherit
 }
