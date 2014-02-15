@@ -5,7 +5,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="form_handle.js"></script>
+    <!-- <script src="form_handle.js"></script> 
+-->
+    <script src="http://code.jquery.com/jquery-git2.js"></script>
     <title>wut2do</title>
 
     <!-- Bootstrap -->
@@ -25,14 +27,16 @@
         <br>This is our home page. We are going to put some cute stuff here... idk This is our home page. We are going to put some cute stuff here... idk This is our home page. We are going to put some cute stuff here... idk This is our home page. We are going to put some cute stuff here... idk This is our home page. We are going to put some cute stuff here... idk This is our home page. We are going to put some cute stuff here... idk
         <br>This is our home page. We are going to put some cute stuff here... idk</p>
     <ul> Your information: </ul>
-      <form action="destination.html" method="get">
-    Radio button <input type="radio" name="foo" value="1" checked="checked">
-    input value <input type="text" name="bar">
+  <form action="destination.html" method="get">
+    radio input <input type="radio" name="foo">
+      <input type="radio" name="foo2">
+    text input <input type="text" name="text">
+    <input name="bar" value="Insert here" >
     <select name="this">
       <option value="hi" selected="selected">Hi</option>
       <option value="ho">Ho</option>
     </select>
-          <input type="submit" name="submit" onclick="saveInfo()">
+    <input type="submit" name="submit">
   </form>
   <div id=result></div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
