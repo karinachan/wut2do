@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name=author content="Scott D. Anderson">
+    <title>Web Page with a Form</title>
+    <link rel="stylesheet" href="../../css/webdb-style.css">
+    <style>
+         #wrapper {
+             padding: 2em;
+             width: 60%;
+         }
+         
+         .not-yet {
+             color: gray;
+         }
+
+    </style>
+</head>
+<body>
+
+ <form class="inset" action="submitsearch.php" method="get">
+    <!-- modern browsers will insist that "required" elemements are non-empty -->
+    <p>Start time: <input required type="text" name="start">
+	<p>End time: <input required type="text" name="end">
+    <p>type:
+      <select required name="type">
+        <!-- invalid option must have an empty value for "required" to work -->
+        <option value="">choose activity
+        <option>Food
+        <option>Movie
+      </select>
+    <p><input type="submit">
+  </form>
+
+
+</body>
+</html>

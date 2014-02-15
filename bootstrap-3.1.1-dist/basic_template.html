@@ -6,6 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
+	 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" id="jquery"></script>
+ 
+	<link href="/styles/leaflet.css" type="text/css" rel="stylesheet" />
+	<link href="/styles/apisamples.css" type="text/css" rel="stylesheet" />
+ 
+	<script src="/scripts/apisamples.js" type="text/javascript"></script>
+	<script src="/scripts/third_party/jquery.ba-bbq.js" type="text/javascript"></script>
+	<script src="/scripts/third_party/leaflet.js" type="text/javascript"></script>
+	<script src="/scripts/third_party/wax.leaf.min.js" type="text/javascript"></script>
+ 
+ 
 
     <title>wut2do</title>
 
@@ -27,15 +38,15 @@
         <br>This is our home page. We are going to put some cute stuff here... idk</p>
     <ul> Your information: </ul><br>
   <form action="destination.html" method="get">
-    How Many People? <input type="text" name="'HowMany"><br><br>
-    What's Your Location? <input type="text" name="'Location"><br><br>
+    Latitude <input type="text" name="'lat"><br><br>
+    Longitude <input type="text" name="'lon"><br><br>
     When? <input type="tex" name="'datetime"><br><br>
     What do you want to do? <input type="checkbox" name="'interests" value = "food">  Food
         <input type ="checkbox" name="'interests" value="Movie"> Movies
         <input type ="checkbox" name="'interests" value = "Nature"> Nature
         <input type ="checkbox" name="'interests" value = "ArtMuseum"> Museums
         <input type ="checkbox" name="'interests" value = "Music"> Music   
-        <input type ="checkbox" name="'interests" value="shopping"> Shopping  <br><br>
+        <input type ="checkbox" name="'interests" value="shopping"> Shopping  <br><br> -->
     <input type="submit" /> <!-- don't include the name part for submit to have it not appear in the get --> 
   </form>
   <div id=result></div>
