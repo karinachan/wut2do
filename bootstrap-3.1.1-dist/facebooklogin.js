@@ -10,7 +10,7 @@
 
         FB.Event.subscribe('auth.authResponseChange', function(response) {
             // Here we specify what we do with the response anytime this event occurs. 
-            FBSession.activeSession = fbSession;
+           // FBSession.activeSession = fbSession;
             if (response.status === 'connected') {
               // The response object is returned with a status field that lets the app know the 
               // login status of the person. In this case, we're handling the situation where they 
@@ -47,4 +47,5 @@
           //console.log('Good to see you, ' + response.name + '.');
         });
       }
+
         testAPI(); 

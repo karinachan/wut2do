@@ -29,9 +29,11 @@
 </head>
 
 <body>
-    <div id="fb-root"></div>
+   <div id="fb-root"></div>
     <script>
+        
         (function(d, s, id) {
+          
           var js, fjs = d.getElementsByTagName(s)[0];
           if (d.getElementById(id)) return;
           js = d.createElement(s); js.id = id;
@@ -39,14 +41,13 @@
           fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
-
+<div id="slide"> 
     <div class="fb-login-button" data-max-rows="5" data-size="xlarge" data-show-faces="true" data-auto-logout-link="true"></div>
-
+    
+</div>
     <h1>Don't have anything to do? Let us help you.</h1>
 
-    <p>This is our home page. We are going to put some cute stuff here... idk This is our home page. We are going to put some cute stuff here... idk This is our home page. We are going to put some cute stuff here... idk
-        <br>This is our home page. We are going to put some cute stuff here... idk This is our home page. We are going to put some cute stuff here... idk This is our home page. We are going to put some cute stuff here... idk This is our home page. We are going to put some cute stuff here... idk This is our home page. We are going to put some cute stuff here... idk This is our home page. We are going to put some cute stuff here... idk
-        <br>This is our home page. We are going to put some cute stuff here... idk</p>
+    
     <br>
     <form action="destination.html" method="get">
         Location?
@@ -64,7 +65,7 @@
         <input type="checkbox" name="'interests" value="shopping">Shopping
         <br>
         <br>
-        <div id="progressbar"><input type="submit" /></div>
+        <input type="submit" /><div id="progressbar"></div>
         <!-- don't include the name part for submit to have it not appear in the get -->
         <div id="progressbar"></div>
     </form>

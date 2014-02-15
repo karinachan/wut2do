@@ -1,5 +1,20 @@
 
-        $(function() {
+    var i = 0; //variable used to count the steps
+    function myclick(){ // function called on a button click for example
+        var int = self.setInterval(
+            function(){
+                if (i == 100) window.clearInterval(int);
+                $( "#progressbar" ).progressbar("value", i);
+                i++;
+            }
+            , 10);
+    }
+
+    $('button').button().click(myclick); // a button element which will 
+                                         // start the progress bar
+    $( "#progressbar" ).progressbar(); //this part sets up the progressbar
+     
+/*$(function() {
             $( "#progressbar" ).progressbar({
               value: false
             });
@@ -22,4 +37,4 @@
             });
           });
 
- 
+ */
