@@ -13,9 +13,17 @@ previous page are not preserved.
 
 */
 
-var result= window.location.search;
+/*var result= window.location.search;
+
 document.getElementById("write").innerHTML = window.location.search;
 
 $('#result').html("<br />$('form').serialize():<br />"+ $('form').serialize()+"<br /><br />$('form').serializeArray():<br />" + JSON.stringify($('form').serializeArray()));
 
-document.getElementById("write").innterHTML=$('form').serialize(); 
+document.getElementById("write").innterHTML=$('form').serialize(); */
+
+var result = window.location.search;
+
+//var partsArray = result.split('=');
+//for (int i = 0; i <= partsArray.length; i++) 
+
+document.getElementById("write").innerHTML=result;
