@@ -19,14 +19,36 @@
 			var tempstr = partsArray[i].substring(temp+1); 
 			newArray[i] = tempstr; 
 		}
-		
-		
-		if(newArray[3] == "food")
+		alert(newArray[0]);
+		if(newArray[0] == "Current+Location") {
+			alert("buh");
+			
+				function getLocation()
+				{
+				if (navigator.geolocation)
+				{
+				alert("heyyy");
+					navigator.geolocation.getCurrentPosition(showPosition);
+				}
+				else{alert("else");}
+  }
+				function showPosition(position)
+					{
+					alert("hereeeee");
+					var lat = position.coords.latitude;
+					var lon = position.coords.longitude;
+					}
+					}
+				
+		if(newArray[2] == "food")
+			categoryID = "categoryId=4d4b7105d754a06374d81259&";
 			categoryID = "categoryId=4d4b7105d754a06374d81259&";
 		
-		console.log(newArray[3]); 
-		console.log(newArray[0]);
-		console.log(newArray[1]); 
+		alert("here");
+		console.log(newArray[2]); 
+		console.log(lat);
+		console.log(lon); 
+		
 	    //document.getElementById("write").innerHTML=document.getElementById("write").innerHTML+newArray[i]; 
 
 	/*	document.getElementById("write").innerHTML= document.getElementById("write").innerHTML=document.getElementById("write").innerHTML+"0"+newArray[0]; 
@@ -34,7 +56,7 @@
 		document.getElementById("write").innerHTML= document.getElementById("write").innerHTML=document.getElementById("write").innerHTML+"1"+newArray[1];
         alert("here2");*/
 		
-		$.getJSON('https://api.foursquare.com/v2/venues/search?' + categoryID + 'll=' + newArray[0] + ',' + newArray[1] +
+		$.getJSON('https://api.foursquare.com/v2/venues/search?' + categoryID + 'll=' + lat + ',' + lon +
 		'&radius=1000&limit=5&***REMOVED***=***REMOVED***&***REMOVED***=***REMOVED***&v=20140215',
 		
 		function(data) {
