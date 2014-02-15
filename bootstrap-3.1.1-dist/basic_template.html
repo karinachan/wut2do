@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="form_handle.js"></script>
     <title>wut2do</title>
 
     <!-- Bootstrap -->
@@ -24,13 +25,16 @@
         <br>This is our home page. We are going to put some cute stuff here... idk This is our home page. We are going to put some cute stuff here... idk This is our home page. We are going to put some cute stuff here... idk This is our home page. We are going to put some cute stuff here... idk This is our home page. We are going to put some cute stuff here... idk This is our home page. We are going to put some cute stuff here... idk
         <br>This is our home page. We are going to put some cute stuff here... idk</p>
     <ul> Your information: </ul>
-    <form id="target" action="destination.html" method="get">
-        <li>Name: <input type="text" name="nameinfo" value="Hello there">
-        <input type="submit" value="Go">
-    </form>
-    <div id="other">
-        Trigger the handler
-    </div>
+      <form action="destination.html" method="get">
+    Radio button <input type="radio" name="foo" value="1" checked="checked">
+    input value <input type="text" name="bar">
+    <select name="this">
+      <option value="hi" selected="selected">Hi</option>
+      <option value="ho">Ho</option>
+    </select>
+          <input type="submit" name="submit" onclick="saveInfo()">
+  </form>
+  <div id=result></div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
