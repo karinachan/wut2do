@@ -107,7 +107,27 @@ function JQuery(lat, lon, max) {
         function (data) {
         //    content= "<form action=\"destination.html\" method=\"get\">";
             $.each(data.response.venues, function (i, venues) {
-                content =  '<p>' + venues.name + '-  ' + venues.location.address + ', ' + venues .location.city + ', ' + venues.location.state +'</p>';
+                if (venues.name == undefined) {
+                 venues.name = "";   
+                } else {
+                    venues.name = venues.name + '- ';
+                }
+                if (venues.location.address == undefined) {
+                    venues.location.address = "";
+                } else {
+                    venues.location.address = venues.location.address + ", ";
+                }
+                console.log(venues.location.address);
+                if (venues.location.city == undefined) {
+                    venues.location.city = "";
+                } else {
+                    venues.location.city = venues.location.city + ", ";
+                }
+                if (venues.location.state == undefined) {
+                 venues.location.state = "";
+                }
+                
+                content =  '<p>' + venues.name  + venues.location.address + venues .location.city + venues.location.state +'</p>';
                 $(content).appendTo("#names");
             });
         });
