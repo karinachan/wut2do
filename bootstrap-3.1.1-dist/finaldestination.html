@@ -23,6 +23,7 @@ var newArray = new Array(partsArray.length); //stores the correctly split but wi
     var tempstr = partsArray[i].substring(temp + 1);
    // document.write(tempstr + " "); 
     newArray[i] = tempstr;
+        alert(newArray[i]);
         document.getElementById("itinerary").innerHTML+="<li>. "+newArray[i];
         
 }
@@ -32,10 +33,9 @@ var newArray = new Array(partsArray.length); //stores the correctly split but wi
     </head>
     <body> 
         
-<div class="texty1"> 
-    Your final itinerary is: 
-    <div id="itinerary">
-    </div>
+<h1>
+    Your final itinerary is: </h1>
+    <div id="itinerary"></div>
         </div>
         <div class="footer"><div id="textfo"><a href="basic_template.html">Back to the Main Page.</a></div></div>
         </body>

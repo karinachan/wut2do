@@ -107,6 +107,8 @@ function JQuery(lat, lon, max) {
         function (data) {
             var num = 0; 
             content= "<form action=\"finaldestination.html\" method=\"get\">";
+            $(content).appendTo("#names");
+            console.log(content);
             $.each(data.response.venues, function (i, venues) {
                 if (venues.name == undefined) {
                  venues.name = "";   
@@ -131,12 +133,15 @@ function JQuery(lat, lon, max) {
 
              
 
-              content = '<p><input type=\"checkbox\" name=\"ven\"\ value=\"food\">'+venues.name + venues.location.address + venues.location.city + venues.location.state + '<br></p>';
+              content = '<p><input type=\"checkbox\" name=\"ven\"\ value=\"food\"> '+ venues.name + venues.location.address + venues.location.city + venues.location.state + '<br></p>';
             $(content).appendTo("#names");
-            content += "<input type=\"submit\" />"
-        
+           
+        console.log(content);
 
         });
+            content='<input type=\"submit\" class=\"btn btn-primary btn-lg\" /></form>';
+            $(content).appendTo("#names");
+            console.log(content);
     });
     
 
