@@ -12,6 +12,17 @@ html {
     -webkit-text-size-adjust: 100%
     
 }
+.clip-circle
+{
+  background:url(URL-of-image) no-repeat;
+  background-size:500px 480px;
+  background-position:-160px 0px;
+  height:300px;
+  width:300px;
+  border-radius:50%;
+  overflow:hidden;
+  margin:auto;
+}
 #progressbar .ui-progressbar-value {
     background-color: #ccc;
 }
