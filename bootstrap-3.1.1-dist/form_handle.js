@@ -18,7 +18,7 @@ for (var i = 0; i < partsArray.length; i++) {
     newArray[i] = tempstr;
 }
 
-var max = 5;
+var max = 7;
 
 if (newArray[1] == "food"){
     console.log("food in"); 
@@ -127,7 +127,7 @@ function JQuery(lat, lon, max) {
                  venues.location.state = "";
                 }
                 
-              content = '<p><input type=\"checkbox\" name=\"ven\"\ value=\"food\">'+venues.name + venues.location.address + venues.location.city + venues.location.state + '<br></p>';
+              content = '<p><input type=\"checkbox\" name=\"ven\"\ value=\"food\">'+ " " + venues.name + venues.location.address + venues.location.city + venues.location.state + '<br></p>';
                 
             $(content).appendTo("#names");
             content += "<input type=\"submit\" />"
