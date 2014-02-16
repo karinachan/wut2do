@@ -55,16 +55,16 @@
 
         testAPI(); 
 FB.api('/me', function(response) {
-  alert(response.name);
+  
 });
 
 FB.api('/me/feed', { limit: 3 }, function(response) {
   for (var i=0, l=response.length; i<l; i++) {
     var post = response[i];
     if (post.message) {
-      alert('Message: ' + post.message);
+      
     } else if (post.attachment && post.attachment.name) {
-      alert('Attachment: ' + post.attachment.name);
+      
     }
   }
 });
