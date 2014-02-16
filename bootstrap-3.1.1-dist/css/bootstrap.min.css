@@ -33,34 +33,22 @@ body {
 overflow-x:hidden;
 }
 
+.padding{
+    padding: 20px;
+}
 
 #textblock1{
-    margin-top:100px;
+    margin-top:40px;
 }
+
 
 td{
-    width: 30%;
-}
-
-
-
-.texty {
-    padding:30px;
+    width: 500px;
     font-size: 20px;
-    width:500px;
-   
-
+    background-color: rgba(255,255,255,0.3);
+    padding:20px;
 }
 
-.texty1{
-    padding: 80px;
-    margin-left:auto;
-    margin-right:auto;
-    font-size: 20px;
-    width: 
-    
-    /* background-color:rgba(30,10,10,0.3);*/
-}
 
 #textfo {
     padding: 20px;

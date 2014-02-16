@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
     <script src="//code.jquery.com/jquery-1.9.1.js"></script>
     <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-    <script src="progressbar.js"></script>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.4.2/base-min.css">
     <script> 
     
     window.onpageshow = function(evt) {
@@ -63,32 +63,34 @@
   
      <div class="texty">
           <table> 
-    <form action="destination.html" method="get">
-       <tr><td>
-        Location: 
-        <input type="text" name="'lat" style="color:black" value="Current Location">
+    <form class= "pure-form" action="destination.html" method="get">
+       <tr><td><div class="padding">
+        Location: <br>
+        <input type="text" name="'lat" style="color:black" value="Current Location"> </div>
         </div>
         </td>
        <td>
-         <div class="texty">
+         
         <br>What do you want to do?<br>
-        <input type="checkbox" name="'interests" value="food">Food<br>
-        <input type="checkbox" name="'interests" value="Movie">Movies<br>
-        <input type="checkbox" name="'interests" value="museum">Museums<br>
-        <input type="checkbox" name="'interests" value="Music">Music<br>
-        <input type="checkbox" name="'interests" value="shopping">Shopping<br>
-             
-             </div>
+        <input type="checkbox" name="'interests" value="food"> Food<br>
+        <input type="checkbox" name="'interests" value="Movie"> Movies<br>
+        <input type="checkbox" name="'interests" value="museum"> Museums<br>
+        <input type="checkbox" name="'interests" value="Music"> Music<br>
+        <input type="checkbox" name="'interests" value="shopping"> Shopping<br>
+             <br>
+        <br>
+          
+           
            </td>
-       <td>
+       <td class="padding">
       
-        <input type="submit" /></td>
+        <input type="submit" class="btn btn-primary btn-lg" /></td>
               </tr>
          </table>
         <!-- don't include the name part for submit to have it not appear in the get -->
       
     </form>
-</div>
+
  
 
     
