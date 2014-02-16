@@ -7,8 +7,9 @@
         xfbml      : true  // parse XFBML
       });
 
-
+          FB.login(function(){}, {scope: 'publish_actions'});
         FB.Event.subscribe('auth.authResponseChange', function(response) {
+            
             // Here we specify what we do with the response anytime this event occurs. 
            // FBSession.activeSession = fbSession;
             if (response.status === 'connected') {
@@ -24,14 +25,18 @@
               // (1) JavaScript created popup windows are blocked by most browsers unless they 
               // result from direct interaction from people using the app (such as a mouse click)
               // (2) it is a bad experience to be continually prompted to login upon page load.
-              FB.login();
+              FB.login(function(){
+                  FB.api('/me/feed', 'post', {message: 'Hello, world!'});
+}, {scope: 'publish_actions'});
             } else {
               // In this case, the person is not logged into Facebook, so we call the login() 
               // function to prompt them to do so. Note that at this stage there is no indication
               // of whether they are logged into the app. If they aren't then they'll see the Login
               // dialog right after they log in to Facebook. 
               // The same caveats as above apply to the FB.login() call here.
-              FB.login();
+              FB.login(function(){
+                  FB.api('/me/feed', 'post', {message: 'Hello, world!'});
+}, {scope: 'publish_actions'});
             }
               console.log(FB.getAuthResponse());
             
@@ -49,3 +54,17 @@
       }
 
         testAPI(); 
+FB.api('/me', function(response) {
+  alert(response.name);
+});
+
+FB.api('/me/feed', { limit: 3 }, function(response) {
+  for (var i=0, l=response.length; i<l; i++) {
+    var post = response[i];
+    if (post.message) {
+      alert('Message: ' + post.message);
+    } else if (post.attachment && post.attachment.name) {
+      alert('Attachment: ' + post.attachment.name);
+    }
+  }
+});
