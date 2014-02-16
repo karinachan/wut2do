@@ -41,7 +41,7 @@
           fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
-    <a href="#top"></a> 
+    <div id="top"></div> 
     <div id="firstsection">
 <div id="slide"> 
     <div class="fb-login-button" data-max-rows="5" data-size="xlarge" data-show-faces="true" data-auto-logout-link="true"></div>
@@ -52,18 +52,19 @@
     
     <br>
         </div>
-    <div id="secondsection"> 
-    <a href="#form"></a>
+     <div class="texty">
+    <div id="form"></div>
+    
     <form action="destination.html" method="get">
         Use current location: 
-        <input type="text" name="'lat" value="Current Location">
+        <input type="text" name="'lat" style="color:black" value="Current Location">
         <br>
 		<br>
 		Enter city: 
-		<input type="text" name="'city">
+		<input type="text" name="'city" style="color:black">
 		<br>
         <br>When?
-        <input type="text" name="'datetime">
+        <input type="text" name="'datetime" style="color:black">
         <br>
         <br>What do you want to do?
         <input type="checkbox" name="'interests" value="food">Food
@@ -78,11 +79,16 @@
       
     </form>
 </div>
-    
+    <div id="aboutus"></div>
+    <div class="texty1"> 
+    <p> 
+    We are Wellesley College CS students who love programming and hoarding stickers! Our team is composed of Karina Chan, Laura Zeng, Vivienne Shaw, and Emery Otopalik. This website is an activity planner inspired by indecisive and inefficient friend group planning. We used the Foursquare API, Google Geolocation API, and DigitalOcean to create our website.</p>
+        </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <div class="footer"><div id="textfo"><a href="#aboutus">About Us </a><a href="#top">| Back to the top </a><a href="#form">| Form</a></a></a></div></div>
 </body>
 
 </html>
