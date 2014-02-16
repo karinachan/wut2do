@@ -128,17 +128,10 @@ function JQuery(lat, lon, max) {
                  venues.location.state = "";
                 }
                 
-<<<<<<< HEAD
 
-              content = '<p><input type=\"checkbox\" name=num  value=\"food\"> '+venues.name + venues.location.address + venues.location.city + venues.location.state + '<br></p>';
+             
 
-              content = '<p><input type=\"checkbox\" name=\"ven\"\ value=\"food\">'+ " " + venues.name + venues.location.address + venues.location.city + venues.location.state + '<br></p>';
-
-=======
               content = '<p><input type=\"checkbox\" name=\"ven\"\ value=\"food\">'+venues.name + venues.location.address + venues.location.city + venues.location.state + '<br></p>';
->>>>>>> parent of 59e10be... heyho
-                
-                num +=1; 
             $(content).appendTo("#names");
             content += "<input type=\"submit\" />"
         
