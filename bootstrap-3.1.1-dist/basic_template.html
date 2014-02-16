@@ -41,48 +41,53 @@
           fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
-    <div id="top"></div> 
     <div id="firstsection">
 <div id="slide"> 
     <div class="fb-login-button" data-max-rows="5" data-size="xlarge" data-show-faces="true" data-auto-logout-link="true"></div>
     
 </div>
-    <h1>Don't have anything to do? Let us help you.</h1>
-<p>Plan ahead for dates. We trawl foursquare and use Facebook to let you create and share your plans. </p>
+    <h1 id="textblock1">Don't have anything to do? Let us help you.</h1>
+<p>Plan ahead for dates. We crawl Foursquare and use Facebook to let you create and share your plans. </p>
     
     <br>
         </div>
+  
      <div class="texty">
-    <div id="form"></div>
-    
+          <table> 
     <form action="destination.html" method="get">
+       <tr><td>
         Location: 
         <input type="text" name="'lat" style="color:black" value="Current Location">
-        <br>
-		<br>
-        <br>What do you want to do?
-        <input type="checkbox" name="'interests" value="food">Food
-        <input type="checkbox" name="'interests" value="Movie">Movies
-        <input type="checkbox" name="'interests" value="museum">Museums
-        <input type="checkbox" name="'interests" value="Music">Music
-        <input type="checkbox" name="'interests" value="shopping">Shopping
-        <br>
-        <br>
-        <input type="submit" /><div id="progressbar"></div>
+        </div>
+        </td>
+       <td>
+         <div class="texty">
+        <br>What do you want to do?<br>
+        <input type="checkbox" name="'interests" value="food">Food<br>
+        <input type="checkbox" name="'interests" value="Movie">Movies<br>
+        <input type="checkbox" name="'interests" value="museum">Museums<br>
+        <input type="checkbox" name="'interests" value="Music">Music<br>
+        <input type="checkbox" name="'interests" value="shopping">Shopping<br>
+             
+             </div>
+           </td>
+       <td>
+      
+        <input type="submit" /></td>
+              </tr>
+         </table>
         <!-- don't include the name part for submit to have it not appear in the get -->
       
     </form>
 </div>
-    <div id="aboutus"></div>
-    <div class="texty1"> 
-    <p> 
-    We are Wellesley College CS students who love programming and hoarding stickers! Our team is composed of Karina Chan, Laura Zeng, Vivienne Shaw, and Emery Otopalik. This website is an activity planner inspired by indecisive and inefficient friend group planning. We used the Foursquare API, Facebook Login API, Google Geolocation API, and DigitalOcean to create our website.</p>
-        </div>
+ 
+
+    
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    <div class="footer"><div id="textfo"><a href="#top">Back to the top </a><a href="#form"> | Form </a><a href="#aboutus">| About Us </a></div></div>
+    <div class="footer"><div id="textfo">Made by Wellesley College CS students. </div></div>
 </body>
 
 </html>
