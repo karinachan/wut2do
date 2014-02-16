@@ -12,7 +12,6 @@ var newArray = new Array(partsArray.length); //stores the correctly split but wi
 var categoryID = "";
 
 for (var i = 0; i < partsArray.length; i++) {
-    document.write(partsArray[i]+" "); 
     var temp = partsArray[i].lastIndexOf("=");
     var tempstr = partsArray[i].substring(temp + 1);
    // document.write(tempstr + " "); 
@@ -98,47 +97,13 @@ $.getJSON(jsonURL, function( data ) {
   JQuery(lat, lon, max);
 });
     
-
 }
-
-/*$.getJSON('https://api.foursquare.com/v2/venues/search?' + categoryID + 'll=' + lat + ',' + lon  +
-
-        console.log(lon);
-        JQuery(lat, lon);
-		city = 'li=' + lat + ',' + lon; 
-    }
-
-}
-else{}
-
-
-	console.log(city);
-	console.log(categoryID);
-	
-
-
-$.getJSON('https://api.foursquare.com/v2/venues/search?' + categoryID + city +
->>>>>>> 047116e047db68ecf3ef464e7f9f609616185a4f
-    'limit=5&***REMOVED***=***REMOVED***&***REMOVED***=***REMOVED***&v=20140215',
-    function (data) {
-        $.each(data.response.venues, function (i, venues) {
-            content = '<p>' + venues.name + '  ' + venues.location.address + '</p>';
-            $(content).appendTo("#names");
-        });
-
-    });*/
-
 
 function JQuery(lat, lon, max) {
 
-/ /
+/ /     
 
-/*	document.getElementById("write").innerHTML= document.getElementById("write").innerHTML=document.getElementById("write").innerHTML+"0"+newArray[0]; 
-		alert("here1");
-		document.getElementById("write").innerHTML= document.getElementById("write").innerHTML=document.getElementById("write").innerHTML+"1"+newArray[1];
-        alert("here2");*/
-
-     $.getJSON('https://api.foursquare.com/v2/venues/search?categoryID=' + categoryID + '&ll=' + lat + ',' + lon + '&limit=' + max +'&***REMOVED***=***REMOVED***&***REMOVED***=***REMOVED***&v=20140215',
+     $.getJSON('https://api.foursquare.com/v2/venues/search?categoryId=' + categoryID + '&ll=' + lat + ',' + lon + '&limit=' + max +'&***REMOVED***=***REMOVED***&***REMOVED***=***REMOVED***&v=20140215',
         function (data) {
         //    content= "<form action=\"destination.html\" method=\"get\">";
             $.each(data.response.venues, function (i, venues) {
@@ -150,20 +115,3 @@ function JQuery(lat, lon, max) {
 var resultStrings = newArray.join(",");
 }
 
-/*//var resultStrings = newArray.join(",");
-$.getJSON('https://api.foursquare.com/v2/venues/search?' + categoryID + city +
-    'limit=5&***REMOVED***=***REMOVED***&***REMOVED***=***REMOVED***&v=20140215',
-    function (data) {
-        $.each(data.response.venues, function (i, venues) {
-            content = '<p>' + venues.name + ':   ' + venues.location.address + '</p>';
-            $(content).appendTo("#names");
-        });
-    });*/
-
-
-//var resultStrings = newArray.join(",");
-
-
-//	document.write(resultStrings); 
-
-// document.getElementById("write").innerHTML=resultStrings;
