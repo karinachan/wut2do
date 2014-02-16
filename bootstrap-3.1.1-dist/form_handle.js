@@ -105,7 +105,8 @@ function JQuery(lat, lon, max) {
 
      $.getJSON('https://api.foursquare.com/v2/venues/search?categoryId=' + categoryID + '&ll=' + lat + ',' + lon + '&limit=' + max +'&***REMOVED***=***REMOVED***&***REMOVED***=***REMOVED***&v=20140215',
         function (data) {
-            content= "<form action=\"destination.html\" method=\"get\">";
+            var num = 0; 
+            content= "<form action=\"finaldestination.html\" method=\"get\">";
             $.each(data.response.venues, function (i, venues) {
                 if (venues.name == undefined) {
                  venues.name = "";   
@@ -127,8 +128,9 @@ function JQuery(lat, lon, max) {
                  venues.location.state = "";
                 }
                 
-              content = '<p><input type=\"checkbox\" name=\"ven\"\ value=\"food\">'+venues.name + venues.location.address + venues.location.city + venues.location.state + '<br></p>';
+              content = '<p><input type=\"checkbox\" name=num  value=\"food\"> '+venues.name + venues.location.address + venues.location.city + venues.location.state + '<br></p>';
                 
+                num +=1; 
             $(content).appendTo("#names");
             content += "<input type=\"submit\" />"
         
