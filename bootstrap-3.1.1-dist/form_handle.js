@@ -14,7 +14,7 @@ var categoryID = "";
 for (var i = 0; i < partsArray.length; i++) {
     var temp = partsArray[i].lastIndexOf("=");
     var tempstr = partsArray[i].substring(temp + 1);
-   // document.write(tempstr + " "); 
+   // document.(tempstr + " "); 
     newArray[i] = tempstr;
 }
 
@@ -106,9 +106,9 @@ function JQuery(lat, lon, max) {
      $.getJSON('https://api.foursquare.com/v2/venues/search?categoryId=' + categoryID + '&ll=' + lat + ',' + lon + '&limit=' + max +'&***REMOVED***=***REMOVED***&***REMOVED***=***REMOVED***&v=20140215',
         function (data) {
             var num = 0; 
-            content= "<form action=\"finaldestination.html\" method=\"get\">";
-            $(content).appendTo("#names");
-            console.log(content);
+            //content= "<form action=\"finaldestination.html\" method=\"get\">";
+            //$(content).appendTo("#names");
+            //console.log(content);
             $.each(data.response.venues, function (i, venues) {
                 if (venues.name == undefined) {
                  venues.name = "";   
@@ -129,24 +129,16 @@ function JQuery(lat, lon, max) {
                 if (venues.location.state == undefined) {
                  venues.location.state = "";
                 }
-                
-
-             
-
+                //may also run in trouble with having the checkboxes constructed this way
               content = '<p><input type=\"checkbox\" name=\"ven\"\ value=\"food\"> '+ venues.name + venues.location.address + venues.location.city + venues.location.state + '<br></p>';
             $(content).appendTo("#names");
            
         console.log(content);
 
         });
-            content='<input type=\"submit\" class=\"btn btn-primary btn-lg\" /></form>';
-            $(content).appendTo("#names");
-            console.log(content);
     });
-    
-
-            
 
 var resultStrings = newArray.join(",");
 }
+
 

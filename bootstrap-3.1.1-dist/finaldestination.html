@@ -7,7 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="form_handle.js"></script>
     <script>
+        
+
     var raw = window.location.search;
 raw = raw.substring(4);
 // alert(raw);
@@ -24,7 +27,7 @@ var newArray = new Array(partsArray.length); //stores the correctly split but wi
    // document.write(tempstr + " "); 
     newArray[i] = tempstr;
         alert(newArray[i]);
-        document.getElementById("itinerary").innerHTML+="<li>. "+newArray[i];
+        document.getElementById("y").innerHTML+="<li>. "+newArray[i];
         
 }
     
@@ -34,8 +37,9 @@ var newArray = new Array(partsArray.length); //stores the correctly split but wi
     <body> 
         
 <h1>
-    Your final itinerary is: </h1>
+    Your final itinerary is:<p></p> .</h1>
     <div id="itinerary"></div>
+        <center><img src="map.png"></img></center>
         </div>
         <div class="footer"><div id="textfo"><a href="basic_template.html">Back to the Main Page.</a></div></div>
         </body>
