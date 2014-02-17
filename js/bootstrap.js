@@ -681,8 +681,8 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
     return false
   }
 
-  Dropdown.prototype.***REMOVED***down = function (e) {
-    if (!/(38|40|27)/.test(e.***REMOVED***Code)) return
+  Dropdown.prototype.keydown = function (e) {
+    if (!/(38|40|27)/.test(e.keyCode)) return
 
     var $this = $(this)
 
@@ -694,7 +694,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
     var $parent  = getParent($this)
     var isActive = $parent.hasClass('open')
 
-    if (!isActive || (isActive && e.***REMOVED***Code == 27)) {
+    if (!isActive || (isActive && e.keyCode == 27)) {
       if (e.which == 27) $parent.find(toggle).focus()
       return $this.click()
     }
@@ -706,8 +706,8 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
 
     var index = $items.index($items.filter(':focus'))
 
-    if (e.***REMOVED***Code == 38 && index > 0)                 index--                        // up
-    if (e.***REMOVED***Code == 40 && index < $items.length - 1) index++                        // down
+    if (e.keyCode == 38 && index > 0)                 index--                        // up
+    if (e.keyCode == 40 && index < $items.length - 1) index++                        // down
     if (!~index)                                      index = 0
 
     $items.eq(index).focus()
@@ -773,7 +773,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
     .on('click.bs.dropdown.data-api', clearMenus)
     .on('click.bs.dropdown.data-api', '.dropdown form', function (e) { e.stopPropagation() })
     .on('click.bs.dropdown.data-api', toggle, Dropdown.prototype.toggle)
-    .on('***REMOVED***down.bs.dropdown.data-api', toggle + ', [role=menu], [role=listbox]', Dropdown.prototype.***REMOVED***down)
+    .on('keydown.bs.dropdown.data-api', toggle + ', [role=menu], [role=listbox]', Dropdown.prototype.keydown)
 
 }(jQuery);
 
@@ -809,7 +809,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
 
   Modal.DEFAULTS = {
     backdrop: true,
-    ***REMOVED***board: true,
+    keyboard: true,
     show: true
   }
 
@@ -902,12 +902,12 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
   }
 
   Modal.prototype.escape = function () {
-    if (this.isShown && this.options.***REMOVED***board) {
-      this.$element.on('***REMOVED***up.dismiss.bs.modal', $.proxy(function (e) {
+    if (this.isShown && this.options.keyboard) {
+      this.$element.on('keyup.dismiss.bs.modal', $.proxy(function (e) {
         e.which == 27 && this.hide()
       }, this))
     } else if (!this.isShown) {
-      this.$element.off('***REMOVED***up.dismiss.bs.modal')
+      this.$element.off('keyup.dismiss.bs.modal')
     }
   }
 
@@ -1108,8 +1108,8 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
     var options  = {}
     var defaults = this.getDefaults()
 
-    this._options && $.each(this._options, function (***REMOVED***, value) {
-      if (defaults[***REMOVED***] != value) options[***REMOVED***] = value
+    this._options && $.each(this._options, function (key, value) {
+      if (defaults[key] != value) options[key] = value
     })
 
     return options

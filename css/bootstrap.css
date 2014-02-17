@@ -4497,7 +4497,7 @@ a.thumbnail.active {
 .alert-danger .alert-link {
   color: #843534;
 }
-@-webkit-***REMOVED***frames progress-bar-stripes {
+@-webkit-keyframes progress-bar-stripes {
   from {
     background-position: 40px 0;
   }
@@ -4505,7 +4505,7 @@ a.thumbnail.active {
     background-position: 0 0;
   }
 }
-@***REMOVED***frames progress-bar-stripes {
+@keyframes progress-bar-stripes {
   from {
     background-position: 40px 0;
   }

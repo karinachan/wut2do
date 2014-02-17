@@ -84,7 +84,7 @@ console.log(categoryID);
     }
 
 } else if (newArray[0] != "Current+Location") {
-var jsonURL = 'https://maps.googleapis.com/maps/api/geocode/json?' + 'address=' + newArray[0] + '&sensor=true&***REMOVED***=AIzaSyDTRT69LPH6Vb4PsYpZR7fDEvWVl1IWiyA';
+var jsonURL = 'https://maps.googleapis.com/maps/api/geocode/json?' + 'address=' + newArray[0] + '&sensor=true&key=AIzaSyDTRT69LPH6Vb4PsYpZR7fDEvWVl1IWiyA';
     
 $.getJSON(jsonURL, function( data ) {
     var lat = (data.results[0].geometry.location.lat);
@@ -103,7 +103,7 @@ function JQuery(lat, lon, max) {
 
 / /     
 
-     $.getJSON('https://api.foursquare.com/v2/venues/search?categoryId=' + categoryID + '&ll=' + lat + ',' + lon + '&limit=' + max +'&***REMOVED***=***REMOVED***&***REMOVED***=***REMOVED***&v=20140215',
+     $.getJSON('https://api.foursquare.com/v2/venues/search?categoryId=' + categoryID + '&ll=' + lat + ',' + lon + '&limit=' + max +'&client_id=***REMOVED***&client_secret=***REMOVED***&v=20140215',
         function (data) {
             var num = 0; 
             //content= "<form action=\"finaldestination.html\" method=\"get\">";
