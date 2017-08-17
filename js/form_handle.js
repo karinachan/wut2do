@@ -103,7 +103,7 @@ function JQuery(lat, lon, max) {
 
 / /     
 
-     $.getJSON('https://api.foursquare.com/v2/venues/search?categoryId=' + categoryID + '&ll=' + lat + ',' + lon + '&limit=' + max +'&client_id=***REMOVED***&client_secret=***REMOVED***&v=20140215',
+     $.getJSON('https://api.foursquare.com/v2/venues/search?categoryId=' + categoryID + '&ll=' + lat + ',' + lon + '&limit=' + max +'&client_id=**********&client_secret=**********&v=20140215',
         function (data) {
             var num = 0; 
             //content= "<form action=\"finaldestination.html\" method=\"get\">";
